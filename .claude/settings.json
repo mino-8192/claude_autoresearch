@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(prepare.py)",
+      "Edit(backtest.py)",
+      "Edit(run.py)",
+      "Edit(setup.py)",
+      "Edit(SKILL.md)",
+      "Write(prepare.py)",
+      "Write(backtest.py)",
+      "Write(run.py)",
+      "Write(setup.py)",
+      "Write(SKILL.md)"
+    ]
+  }
+}
