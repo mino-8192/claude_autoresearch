@@ -1,0 +1,3 @@
+experiment_id	timestamp	composite_score	kept	train_sharpe	val_sharpe	train_max_dd	val_max_dd	train_num_trades	val_num_trades	num_pairs	num_params	description
+0	2026-04-01 08:45:26	-999.000000	True	-2.065290	-2.287547	-30.633545	-4.213031	650	169	5	5	baseline
+1	2026-04-01 08:47:28	-999.000000	False	-2.065290	-2.287547	-30.633545	-4.213031	650	169	5	5	Baseline: simple z-score pairs trading with default parameters
