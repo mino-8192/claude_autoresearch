@@ -25,7 +25,7 @@ from prepare import compute_spread, compute_zscore
 # METADATA (Update these after each modification)
 # =============================================================================
 
-DESCRIPTION = "Baseline: simple z-score pairs trading with default parameters"
+DESCRIPTION = "Conservative: high entry threshold, quick exit to limit drawdown"
 NUM_PARAMS = 5  # Count of tunable parameters in PARAMS dict
 
 
@@ -56,11 +56,11 @@ def select_pairs(pairs_config: list) -> list:
 # =============================================================================
 
 PARAMS = {
-    "zscore_lookback": 20,      # Rolling window for z-score calculation
-    "entry_threshold": 2.0,     # Z-score threshold to enter position
-    "exit_threshold": 0.0,      # Z-score threshold to exit position
-    "stop_loss_zscore": 3.5,    # Z-score threshold for stop loss
-    "max_holding_days": 30,     # Maximum days to hold a position
+    "zscore_lookback": 30,      # Rolling window for z-score calculation
+    "entry_threshold": 2.5,     # Z-score threshold to enter position
+    "exit_threshold": 0.5,      # Z-score threshold to exit position
+    "stop_loss_zscore": 3.0,    # Z-score threshold for stop loss
+    "max_holding_days": 15,     # Maximum days to hold a position
 }
 
 
