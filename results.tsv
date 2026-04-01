@@ -3,3 +3,5 @@ experiment_id	timestamp	composite_score	kept	train_sharpe	val_sharpe	train_max_d
 1	2026-04-01 08:47:28	-999.000000	False	-2.065290	-2.287547	-30.633545	-4.213031	650	169	5	5	Baseline: simple z-score pairs trading with default parameters
 2	2026-04-01 09:33:39	-999.000000	False	-1.916493	-1.777412	-6.625794	-4.009321	295	62	5	5	Tighter entry (2.5) and stop loss (3.0) to reduce drawdown
 3	2026-04-01 09:51:02	-999.000000	False	-3.377307	-3.630261	-0.761811	-0.268367	650	169	5	5	Baseline: simple z-score pairs trading with default parameters
+4	2026-04-01 09:55:08	-3.077327	True	-2.962120	-3.027327	-0.385950	-0.118655	336	66	5	5	Conservative: high entry threshold, quick exit to limit drawdown
+5	2026-04-01 09:56:53	-999.000000	False	-6.594875	-6.507164	-2.258101	-0.670692	2064	528	5	5	Bad test: very low entry threshold (should be discarded)

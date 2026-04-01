@@ -24,7 +24,11 @@ def git_cmd(*args) -> str:
         capture_output=True,
         text=True,
         cwd=str(prepare.BASE_DIR),
+        encoding="utf-8",
+        errors="replace",
     )
+    if result.stdout is None:
+        return ""
     return result.stdout.strip()
 
 

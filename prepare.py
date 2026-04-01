@@ -459,17 +459,23 @@ def evaluate_strategy(
                 current_pos = 1.0
         positions[i] = current_pos
 
-    # Compute spread returns
+    # Compute spread changes (dollar-based)
     spread = ca - hedge_ratio * cb
-    spread_returns = np.zeros(n)
-    spread_returns[1:] = np.diff(spread) / (np.abs(spread[:-1]) + 1e-10)
+    spread_diff = np.zeros(n)
+    spread_diff[1:] = np.diff(spread)
+
+    # Notional value per unit of spread (cost to enter 1 unit of the pair)
+    notional = ca + hedge_ratio * cb
 
     # Detect trades (position changes)
     position_changes = np.diff(positions, prepend=0)
     trade_mask = position_changes != 0
     num_trades = int(np.sum(trade_mask))
 
-    # Apply transaction costs
+    # Spread dollar change / notional = return per unit of capital deployed
+    spread_returns = spread_diff / (notional + 1e-10)
+
+    # Apply transaction costs on trade entries/exits
     trade_costs = np.abs(position_changes) * (COMMISSION_PCT + SLIPPAGE_PCT)
 
     # Daily PnL
